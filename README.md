@@ -1,7 +1,7 @@
 # Computational Physics
 
 One of my areas of research is the intersection between theoretical physics and computational physics. More specifically, I 
-like to look at problems in theoretical physics with no analytical solution (and often giant and messy equations) and use
+love to look at problems in theoretical physics with no analytical solution (often with giant, messy equations) and use
 numerical methods to solve them.
 
 I will frequently upload example problems from undergraduate courses like classical mechanics and quantum mechanics that 
