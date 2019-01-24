@@ -9,4 +9,4 @@ require numerical methods to solve. The language used will mainly be python, but
 c++.
 
 I will also be uploading work from my own research, including the work I did to solve the problem that is explained in more detail in 
-my most recent publication: [I'm an inline-style link](https://arxiv.org/abs/1901.00074)
+my most recent publication: [Relativistic Description of Confined Hydrogen-Like Atoms](https://arxiv.org/abs/1901.00074)
