@@ -38,7 +38,7 @@ list10 = []  # 4p3/2 radii, energies, k = -2
 Some states you will see two for loops. This is because if we were to stretch out R futher, the function f no longer has 
 opposite signs at the endpoints. So we need to move the endpoint b in closer to endpoint a (the unconfined binding energy) 
 in order to find more roots and assure asymptotic behavior as R gets further away. In simpler english, moving R further out 
-requires a slight change in the interval we hope to find roots.
+requires a slight change in the interval we use to look for energy roots.
 """
 
 # k=-1 states
@@ -63,8 +63,8 @@ for i in np.arange(6.25, 12.75, 0.5):
     s = sqrt((k**2) - ((Z * a)**2))
     L = (1 / 2) * sqrt((2 * k + 1)**2)
     R = i * bohr
-    root = optimize.bisect(f, 0.9999933424520228, 0.9999997337419158)  # interval in which we expect a solution, between ground state binding energy and mc2, in units of mc2
-    bind = root * rest - rest  # solving for binding energy, which is negative
+    root = optimize.bisect(f, 0.9999933424520228, 0.9999997337419158)  
+    bind = root * rest - rest  
     list2.append((i, bind))
 
 for i in np.arange(13.25, 16.25, 0.5):
@@ -74,8 +74,8 @@ for i in np.arange(13.25, 16.25, 0.5):
     s = sqrt((k**2) - ((Z * a)**2))
     L = (1 / 2) * sqrt((2 * k + 1)**2)
     R = i * bohr
-    root = optimize.bisect(f, 0.9999933424520228, 0.9999981485284711)  # interval in which we expect a solution, between ground state binding energy and mc2, in units of mc2
-    bind = root * rest - rest  # solving for binding energy, which is negative
+    root = optimize.bisect(f, 0.9999933424520228, 0.9999981485284711)  
+    bind = root * rest - rest  
     list2.append((i, bind))
 
 # 3s1/2
@@ -235,7 +235,7 @@ for i in np.arange(23, 34.7, 0.9):
 
 """
 These domains for R values were a result of trial and error. They mostly coincide with the principle quantum numbers 
-(2s1/2 has the same ranges as the 3p1/2 and 3p3/2), but they can be slightly different (s orbitals have different shapes than
+(2s1/2 has roughly the same ranges as the 2p1/2 and 2p3/2), but they can be slightly different (s orbitals have different shapes than
 p orbitals). Generally speaking, the higher the n value for ns1/2, np1/2, or np3/2, the further out R needs to be.
 """
 
@@ -337,8 +337,8 @@ from three separate plots, but you can go ahead and plot all 9 on the same graph
 If you look up the energies for each state when the atom is unconfined (which is what each of the confined states here 
 approach as R goes to infinity), you will notice, for example, that the 2s1/2 and 2p1/2 have the same binding energy, 
 but are slightly lower in energy than the 2p3/2, because j = 3/2. This is a result of the spin-orbit interaction. 
-Another point to note is that even though 2s1/2 and 3s/12 states approach the exact same energy, one approaches it faster 
-than the other because of the shape differences betwen the p and s orbitals.
+Another point to note is that even though the confined 2s1/2 and 3s1/2 states approach the exact same energy, one approaches 
+that faster than the other because of the shape differences betwen the p and s orbitals.
 
 The last thing I want to plot is the comparison of ground state energies between the relativistic and non-relativistic 
 confined hydrogen atoms with the exact same barrier height (V = 1). These numbers come from reference #4 in my paper. We 
