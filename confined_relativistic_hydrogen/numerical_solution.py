@@ -14,8 +14,10 @@ bohr = .0529177  # bohr radius in nm
 
 def f(E):
     """
+    This is the function that esults from Eq.(24) in the paper after some algebra to simplify.
+    
     R is the confining radius in units of the bohr radius, k = +/-(1, 2, 3, ...), E is the energy in units of mc^2, Z is 
-    the amount of nucleons (will be equal to one in this case), L = (1/2)*sqrt((2*k+1)**2), kv is the modified bessel 
+    the amount of nucleons (will be equal to one in this case), L = (1/2)*sqrt((2*k+1)**2), besselk is the modified bessel 
     function of the second kind, V is the potential energy term (in units of mc^2), s = sqrt(k**2 - (Za)**2)
     """
     A = 1 + E - V
@@ -235,8 +237,9 @@ for i in np.arange(23, 34.7, 0.9):
 
 """
 These domains for R values were a result of trial and error. They mostly coincide with the principle quantum numbers 
-(2s1/2 has roughly the same ranges as the 2p1/2 and 2p3/2), but they can be slightly different (s orbitals have different shapes than
-p orbitals). Generally speaking, the higher the n value for ns1/2, np1/2, or np3/2, the further out R needs to be.
+(2s1/2 has roughly the same ranges as the 2p1/2 and 2p3/2), but they can be slightly different (s orbitals have different 
+shapes than p orbitals). Generally speaking, the higher the n value for ns1/2, np1/2, or np3/2, the further out R needs to 
+be.
 """
 
 # Next we need to fit polynomials (we will try for 7th degree) through each state. Before that, we must unzip each list of 
@@ -337,7 +340,7 @@ from three separate plots, but you can go ahead and plot all 9 on the same graph
 If you look up the energies for each state when the atom is unconfined (which is what each of the confined states here 
 approach as R goes to infinity), you will notice, for example, that the 2s1/2 and 2p1/2 have the same binding energy, 
 but are slightly lower in energy than the 2p3/2, because j = 3/2. This is a result of the spin-orbit interaction. 
-Another point to note is that even though the confined 2s1/2 and 3s1/2 states approach the exact same energy, one approaches 
+Another point to note is that even though the confined 2s1/2 and 2s1/2 states approach the exact same energy, one approaches 
 that faster than the other because of the shape differences betwen the p and s orbitals.
 
 The last thing I want to plot is the comparison of ground state energies between the relativistic and non-relativistic 
